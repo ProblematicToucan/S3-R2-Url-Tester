@@ -1,0 +1,6 @@
+{
+  "name": "S3/R2 URL Tester",
+  "description": "A developer tool to test and debug Amazon S3 and Cloudflare R2 presigned URLs. Easily upload files directly to your storage bucket from the browser.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
