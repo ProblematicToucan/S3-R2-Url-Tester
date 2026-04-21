@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# S3/R2 Presigned URL Tester
 
-# Run and deploy your AI Studio app
+A minimalist, high-performance developer tool for testing and debugging presigned URLs for object storage services like Amazon S3 and Cloudflare R2.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/31fab433-fbec-421f-b481-f8891d448440
+- **Direct Browser Upload**: Files are sent directly from your browser to the presigned URL using `XMLHttpRequest`.
+- **Method Support**: Toggle between `PUT` and `POST` requests.
+- **Custom Headers**: Add required S3 headers (e.g., `Content-Type`, `x-amz-acl`) easily.
+- **Network Console**: View real-time logs, response headers, and raw body data from the storage endpoint.
+- **Clean Minimalism Design**: Focused, distraction-free interface built with Tailwind CSS and Framer Motion.
 
-## Run Locally
+## How to Use
 
-**Prerequisites:**  Node.js
+1. **Paste URL**: Enter your full presigned URL in the top input field.
+2. **Select Method**: Choose `PUT` (most common) or `POST` based on how your URL was generated.
+3. **Add Headers**: If your storage provider requires specific headers (like `Content-Type` matching the signature), add them in the headers section.
+4. **Drop File**: Drag and drop the file you wish to upload.
+5. **Execute**: Click "Execute Request" and monitor the **Network Console** for the result.
 
+## Tech Stack
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Frontend**: React 19, Vite, Tailwind CSS, Lucide icons, Framer Motion.
+- **Backend**: Express (serving static assets).
+- **Runtime**: Node.js v20.x.
+
+## Security Note
+
+This tool executes requests directly in your browser. Ensure you only use trusted presigned URLs. The application does not store or proxy your files—they go straight to your bucket.
